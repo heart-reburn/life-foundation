@@ -39,6 +39,10 @@ for skill in sorted((ROOT / "skills").glob("*/SKILL.md")):
             if not ((folder / ref).is_file() or (md.parent / ref).is_file()):
                 errors.append(f"{md}: missing {ref}")
 
+    for case in ("trigger-queries.json", "behavior-cases.json"):
+        if not (folder / "evals" / case).is_file():
+            errors.append(f"{folder}: missing evals/{case}")
+
 if errors:
     print("\n".join(errors))
     sys.exit(1)
