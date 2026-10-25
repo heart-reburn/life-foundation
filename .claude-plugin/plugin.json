@@ -1,0 +1,11 @@
+{
+  "name": "life-foundation",
+  "version": "0.1.0",
+  "description": "Coach someone through building general life capabilities, one area and one small weekly practice at a time.",
+  "license": "MIT",
+  "author": {
+    "name": "heart-reburn",
+    "url": "https://github.com/heart-reburn"
+  },
+  "repository": "https://github.com/heart-reburn/life-foundation"
+}

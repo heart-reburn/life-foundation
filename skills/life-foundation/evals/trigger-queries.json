@@ -1,0 +1,66 @@
+[
+  {
+    "query": "I want to get my life together, where do I start?",
+    "should_trigger": true
+  },
+  {
+    "query": "Help me build better habits",
+    "should_trigger": true
+  },
+  {
+    "query": "I keep making bad decisions, how do I get better at it?",
+    "should_trigger": true
+  },
+  {
+    "query": "How can I handle conflict with coworkers better?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm always tired and distracted, help me fix that",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to get better with money and time",
+    "should_trigger": true
+  },
+  {
+    "query": "Make me a self-improvement plan",
+    "should_trigger": true
+  },
+  {
+    "query": "How do I stop procrastinating on big projects?",
+    "should_trigger": true
+  },
+  {
+    "query": "What's the capital of Peru?",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix this SQL query",
+    "should_trigger": false
+  },
+  {
+    "query": "Translate this email into Spanish",
+    "should_trigger": false
+  },
+  {
+    "query": "Help me study for my chemistry exam",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a poem about autumn",
+    "should_trigger": false
+  },
+  {
+    "query": "What's 18% tip on $64?",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize this news article",
+    "should_trigger": false
+  },
+  {
+    "query": "Set up a Python virtual environment",
+    "should_trigger": false
+  }
+]

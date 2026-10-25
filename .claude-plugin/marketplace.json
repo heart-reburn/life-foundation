@@ -1,0 +1,12 @@
+{
+  "name": "life-foundation",
+  "description": "A coaching skill for general life capabilities.",
+  "owner": { "name": "heart-reburn" },
+  "plugins": [
+    {
+      "name": "life-foundation",
+      "source": "./",
+      "description": "Build general life capabilities with small, tracked weekly practices."
+    }
+  ]
+}
