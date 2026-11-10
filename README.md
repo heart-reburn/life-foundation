@@ -63,7 +63,7 @@ Sleep and activity guidelines, if-then plans, emotion reappraisal, and pre-morte
 - `skills/life-foundation/SKILL.md`: the skill.
 - `skills/life-foundation/references/`: the eight areas, reviews, progress-file format, ground rules.
 - `skills/life-foundation/evals/`: trigger tests (should and should not load) and behavior tests (what the skill does once loaded).
-- `scripts/validate.py`: checks frontmatter and file links (runs in CI). `scripts/run_evals.py` runs the evals with the Claude CLI.
+- `scripts/validate.py`: checks frontmatter and file links (runs in CI). `scripts/run_evals.py` runs the evals with any agent CLI (set `SKILL_EVAL_CMD`; defaults to the Claude CLI).
 
 ## License
 

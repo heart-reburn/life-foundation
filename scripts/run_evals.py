@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
-"""Run the skill's evals with the Claude CLI (needs `claude` on PATH).
+"""Run the skill's evals with any agent CLI that reads a prompt on stdin.
 
   run_evals.py trigger [skill]    would the skill load for each query?
   run_evals.py behavior [skill]   does the skill behave as the checklist says?
 
-Uses the sonnet model. Trigger results show whether the description is
-too broad or too narrow. Behavior results are a model-graded smoke test,
-not proof: read the failures.
+The agent command comes from SKILL_EVAL_CMD, for example
+  SKILL_EVAL_CMD="codex exec -" run_evals.py trigger
+and defaults to the Claude CLI with the sonnet model and no tools.
+Trigger results show whether the description is too broad or too narrow.
+Behavior results are a model-graded smoke test, not proof: read the failures.
 """
 import json
+import os
+import shlex
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+CMD = shlex.split(os.environ.get("SKILL_EVAL_CMD", "claude -p --model sonnet --tools ''"))
 
 
 def ask(prompt, system=None):
-    cmd = ["claude", "-p", "--model", "sonnet", "--tools", ""]
     if system:
-        cmd += ["--append-system-prompt", system]
-    return subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=180).stdout.strip()
+        prompt = f"{system}\n\n# User message\n{prompt}"
+    return subprocess.run(CMD, input=prompt, capture_output=True, text=True, timeout=180).stdout.strip()
 
 
 def frontmatter(skill_dir):
